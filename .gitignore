@@ -1,0 +1,60 @@
+# ========================
+# Entorno y Secretos
+# ========================
+.env
+
+# ========================
+# Java / Maven / Spring Boot
+# ========================
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+.mvn/wrapper/maven-wrapper.jar
+*.class
+.mtj.tmp/
+*.jar
+*.war
+*.ear
+*.nar
+.m2/
+HELP.md
+
+# ========================
+# Python / Flask
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# ========================
+# IDEs
+# ========================
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
