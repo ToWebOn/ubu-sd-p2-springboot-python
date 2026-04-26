@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>
+		Login - Práctica 2
+	</title>
+</head>
+<body>
+<h2>Iniciar Sesión</h2>
+<div th:if="${param.error}">
+	Usuario o contraseña inválidos.
+</div>
+<div th:if="${param.logout}">
+	Has cerrado sesión correctamente.
+</div>
+
+<form th:action="@{/login}" method="post">
+	<div>
+		<label>
+			Usuario:
+			<input type="text" name="username"/>
+		</label>
+	</div>
+	<div>
+		<label>
+			Contraseña:
+			<input type="password" name="password"/>
+		</label>
+	</div>
+	<div>
+		<input type="submit" value="Entrar"/>
+	</div>
+</form>
+</body>
+</html>

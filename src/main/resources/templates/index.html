@@ -1,9 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title>
+		Inicio - Práctica 2
+	</title>
+</head>
 <body>
+<h1>
+	Bienvenido al Sistema de Gestión de Excepciones
+</h1>
+<p>
+	Sesión iniciada correctamente.
+</p>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<ul>
+	<li>
+		<a th:href="@{/simulacion}">
+			Ir al panel de Simulaciones (Llamadas a la API Python)
+		</a>
+	</li>
+</ul>
 
+<form th:action="@{/logout}" method="post">
+	<input type="submit" value="Cerrar Sesión"/>
+</form>
 </body>
 </html>

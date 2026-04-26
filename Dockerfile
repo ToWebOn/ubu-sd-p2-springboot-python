@@ -1,20 +1,22 @@
 FROM maven:3.9-amazoncorretto
 
-# Crear usuario nonroot
+# Creación de grupo y usuario sin privilegios para aislar la ejecución
 RUN groupadd -r nonroot && useradd -r -g nonroot -m nonroot \
-    && mkdir -p /basico \
-    && chown -R nonroot:nonroot /basico
+    && mkdir -p /app \
+    && chown -R nonroot:nonroot /app
 
-WORKDIR /basico
+WORKDIR /app
 
-# Copiar el código y compilar como root (para evitar problemas de permisos en .m2)
-COPY .. .
+# Copia del código fuente al contexto de construcción
+COPY . .
 
-RUN mvn clean install
+# Compilación del empaquetado omitiendo la fase de pruebas
+RUN mvn clean install -DskipTests
 
-RUN chown -R nonroot:nonroot /basico
+# Reasignación de permisos tras la generación del directorio /target por el usuario root
+RUN chown -R nonroot:nonroot /app
 
-# Cambiar a usuario sin root para la ejecución
+# Transición a usuario sin privilegios para el arranque del servicio
 USER nonroot
 
-CMD mvn spring-boot:run
+CMD ["mvn", "spring-boot:run"]

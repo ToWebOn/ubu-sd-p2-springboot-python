@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"   />
+	<title>
+		Simulación de API
+	</title>
+</head>
+<body>
+<h2>
+	Simulador de Invocaciones (Python API)
+</h2>
+<p>
+	Utiliza los siguientes botones para consumir el API de terceros (Flask) y forzar excepciones:
+</p>
+
+<a th:href="@{/simular-error-archivo}">
+	<button>
+		Simular Error de Archivo
+	</button>
+</a>
+<br>
+<br>
+<a th:href="@{/simular-error-db}">
+	<button>
+		Simular Error de Base de Datos
+	</button>
+</a>
+<br
+><br>
+<a th:href="@{/}">
+	Volver al inicio
+</a>
+</body>
+</html>
