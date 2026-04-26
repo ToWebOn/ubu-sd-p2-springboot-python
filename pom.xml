@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.ubu.sd</groupId>
-	<artifactId>p2</artifactId>
+	<artifactId>practica2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>practica2</name>
 	<description>Práctica Obligatoria 2. Sistema de gestion de excepciones con Spring Boot y Python</description>
